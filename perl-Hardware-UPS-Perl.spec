@@ -1,4 +1,7 @@
 #
+# TODO:
+#	- init script and stuff maybe?
+#
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
@@ -50,7 +53,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes
+%doc Changes README TODO
+%attr(755,root,root) %{_bindir}/*
 %dir %{perl_vendorlib}/Hardware
-%{perl_vendorlib}/Hardware/*.pm
+%dir %{perl_vendorlib}/Hardware/UPS
+%dir %{perl_vendorlib}/Hardware/UPS/Perl
+%dir %{perl_vendorlib}/Hardware/UPS/Perl/Connection
+%dir %{perl_vendorlib}/Hardware/UPS/Perl/Driver
+%{perl_vendorlib}/Hardware/UPS/Perl/*.pm
+%{perl_vendorlib}/Hardware/UPS/Perl/Connection/*.pm
+%{perl_vendorlib}/Hardware/UPS/Perl/Driver/*.pm
+%{_mandir}/man1/*
 %{_mandir}/man3/*
