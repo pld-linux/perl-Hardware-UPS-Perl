@@ -5,7 +5,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Hardware
 %define		pnam	UPS-Perl
 Summary:	Hardware::UPS-Perl - module and scripts to deal with an UPS
